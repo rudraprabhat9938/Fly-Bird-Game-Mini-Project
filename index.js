@@ -6,7 +6,7 @@ import { getGPUTier } from "https://cdn.jsdelivr.net/npm/detect-gpu@5.0.17/+esm"
 
 const container = document.querySelector(".container");
 const canvas = document.querySelector(".canvas");
-console.log(canvas);
+
 let gpuTier,
   sizes,
   scene,
@@ -867,13 +867,6 @@ const playMusic = () => {
   // bgMusic.play();
 };
 
-const updateMusicVolume = () => {
-  muteBgMusic = !muteBgMusic;
-  bgMusic.volume(muteBgMusic ? 0 : 0.01);
-
-  document.getElementById("sound").src = muteBgMusic ? "assets/icons/sound-off.svg" : "assets/icons/sound-on.svg";
-};
-
 const pauseIconAnimation = (pause = true) => {
   if (pause) {
     //document.querySelector(".hex-music").classList.add("js-loading");
@@ -887,39 +880,6 @@ const pauseIconAnimation = (pause = true) => {
   // document.querySelector(".hex-info").classList.remove("js-loading");
   // document.querySelector(".hex-speed").classList.remove("js-loading");
   // document.querySelector(".hex-birds-eye").classList.remove("js-loading");
-};
-
-const toggleInfoModal = (display = true) => {
-  infoModalDisplayed = display;
-
-  if (display)
-    return gsap
-      .timeline()
-      .to(".info-modal-page", {
-        zIndex: 100,
-      })
-      .to(".info-modal-page", {
-        opacity: 1,
-        duration: 1,
-      })
-      .to(".info-box", {
-        opacity: 1,
-        duration: 1,
-      });
-
-  gsap
-    .timeline()
-    .to(".info-box", {
-      opacity: 0,
-      duration: 0.5,
-    })
-    .to(".info-modal-page", {
-      opacity: 0,
-      duration: 0.5,
-    })
-    .to(".info-modal-page", {
-      zIndex: -1,
-    });
 };
 
 const checkLoadingPage = () => {
