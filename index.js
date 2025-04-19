@@ -145,7 +145,7 @@ const joystick = () => {
 
   const joystickOptions = {
     zone: document.getElementById("zone-joystick"),
-    shape: "circle",
+    shape: "triangle",
     color: "#ffffff6b",
     mode: "dynamic",
   };
@@ -600,6 +600,7 @@ const createTile = () => {
   }
 
   scene.add(hex, grassOne, grassTwo, treeOne, treeTwo);
+  // console.log(treeTwo);
 };
 
 const cleanUpTiles = () => {
